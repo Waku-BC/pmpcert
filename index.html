@@ -1,83 +1,214 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>6-02_drawer</title>
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
-<link href="../../_common/css/style.css" rel="stylesheet">
-<link href="css/special.css" rel="stylesheet">
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://solutions.brightcove.com/wmatsuo/favicon.ico">
+    <title>BC ONBOARDING</title>
+  </head>
+  <body>
+    <button class="nav-btn open-btn">
+      <i class="fas fa-bars"></i>
+    </button>
 
-<div id="wrapper">
-    <header>
-    <div class="container">
-        <div class="title-block">
-            <h1>ドロワーナビゲーション</h1>
-            <h2>開閉機能をプログラミング</h2>            
-        </div>
-        <div class="hamburger" id="open_nav">
-            <img src="hamburger.png" alt="">
-        </div>
-    </div><!-- /.container -->
-    </header>
-    <main>
-    <div class="container">
-    <section>
-        <div class="key">
-            <img src="key.jpg" alt="">
-        </div>
-        <div class="content">
-            <h1>ひとり旅でリフレッシュ</h1>
-            <p>今月の特集は「ひとり旅」。<br>
-            週末に行ける小さな旅行から人生を見つめる長旅まで、<br>
-            充実のおひとり様プラン、紹介します。</p>
-        </div>
-        <div class="archive">
-            <h3>特集アーカイブ</h3>
-            <div class="archive-box">
-                <figure>
-                    <img src="thumb1.jpg" alt="">
-                    <figcaption>レトロな街の、楽しみ方</figcaption>
-                </figure>
-                <figure>
-                    <img src="thumb2.jpg" alt="">
-                    <figcaption>建築物を巡る旅</figcaption>
-                </figure>
-            </div>
-        </div>
-    </section>
-    </div><!-- /.container -->
-    </main>
+    <img src="http://solutions.brightcove.com/wmatsuo/navlogo.png" alt="Logo" class="logo">
 
-    <footer>
-    <div class="container">
-    <p>JavaScript Samples</p>
-    </div><!-- /.container -->
-    </footer>
-</div>
+    <p class="text">Onboarding</p>
 
-<nav id="nav">
-    <div class="logo"><img src="logo.svg" alt=""></div>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">今月の特集</a></li>
-        <li><a href="#">ホテル検索</a></li>
-        <li><a href="#">カフェ検索</a></li>
-        <li><a href="#">お問い合わせ</a></li>
-    </ul>
-</nav>
+    <div class="nav nav-black">
+      <div class="nav nav-red">
+        <div class="nav nav-orange">
+            <div class="nav nav-yellow">
+                <div class="nav nav-white">
+          <button class="nav-btn close-btn">
+            <i class="fas fa-times"></i>
+          </button>
 
-<script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
-<script>
-'use strict';
+          <img src="http://solutions.brightcove.com/wmatsuo/navlogo.png" alt="Logo" class="navlogo">
 
-$(document).ready(function() {
-    $('#open_nav').on('click', function() {
-        $('#wrapper, #nav').toggleClass('show');
-    });
-});
-</script>
-</body>
+          <ul class="list">
+            <li><a href="#">管理者</a></li>
+            <li><a href="Media.html">Media</a></li>
+            <li><a href="#">Player</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li>
+              <ul>
+                <li><a href="https://landing.gallery.video">Portal</a></li>
+                <li><a href="GalleryIPX.html">In Page</a></li>
+                <li><a href="#">Liveイベント</a></li>
+              </ul>
+            <li><a href="">Campaign</a></li>
+              <ul>
+                <li><a href="Campaign.html">非MAP</a></li>
+                <li><a href="Custom.html">カスタム連携</a></li>
+              </ul>
+            <li><a href="#">Social</a></li>
+            <li><a href="#">Live</a></li>
+            <li><a href="#">CloudPlayout</a></li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
+
+
+<script>
+const open_btn = document.querySelector('.open-btn')
+const close_btn = document.querySelector('.close-btn')
+const nav = document.querySelectorAll('.nav')
+
+open_btn.addEventListener('click', () => {
+    nav.forEach(nav_el => nav_el.classList.add('visible'))
+})
+
+close_btn.addEventListener('click', () => {
+    nav.forEach(nav_el => nav_el.classList.remove('visible'))
+})
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.text {
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.logo {
+  height: 33px;
+  width: 250px;
+}
+
+.navlogo {
+  height: 22px;
+  width: 108px;
+}
+
+.nav-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.open-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav.visible {
+  transform: translateX(0);
+}
+
+.nav-black {
+  background-color: #08088C;
+  width: 60%;
+  max-width: 480px;
+  min-width: 320px;
+  transition-delay: 0.8s;
+}
+
+.nav-black.visible {
+  transition-delay: 0s;
+}
+
+.nav-red {
+  background-color: #00EAE4;
+  width: 87%;
+  transition-delay: 0.6s;
+}
+
+.nav-red.visible {
+  transition-delay: 0.2s;
+}
+
+.nav-orange {
+  background-color: #FF5000;
+  width: 86%;
+  transition-delay: 0.4s;
+}
+
+.nav-orage.visible {
+  transition-delay: 0.4s;
+}
+
+.nav-yellow {
+  background-color: #FFCE00;
+  width: 83%;
+  transition-delay: 0.2s;
+}
+
+.nav-yellow.visible {
+  transition-delay: 0.6s;
+}
+
+.nav-white {
+  background-color: #fff;
+  width: 80%;
+  padding: 40px;
+  position: relative;
+  transition-delay: 0.0s;
+}
+
+.nav-white.visible {
+  transition-delay: 0.8s;
+}
+
+.close-btn {
+  opacity: 0.3;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  margin: 20px 0;
+}
+
+.list li a {
+  color: rgb(34, 31, 31);
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.list ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+</style>
